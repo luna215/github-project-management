@@ -1,7 +1,7 @@
 import requests
 import json
 
-
+# NOTE: NEED TO CHANGE FOR YOUR CASES
 PROJECT_VERSIONS = {
     "molstar": {
         "owner": "molstar",
