@@ -13,7 +13,7 @@ PROJECT_VERSIONS = {
         "owner": "epam",
         "repo": "indigo",
         "custom_repo": "Indigo",
-        "release": "indigo-1.0.7"
+        "release": "indigo-1.10.0"
     },
     "ketcher": {
         "owner": "epam",
