@@ -46,6 +46,17 @@ def add_label_to_issue(custom_repo: str, issue_id: str):
     session.post(ISSUES_ADD_LABEL.format(owner=ORGANIZATION, repo=custom_repo, issue_id=issue_id), data=json.dumps(labels))
     print(f"Labels added to issue {issue_id}")
 
+
+def check_if_exists(title: str, custom_repo: str) -> bool:
+    """
+    Checks against the existing issues to see    
+    if title is already preset
+    """
+
+    response = session.get(ISSUE_URL.format(owner=ORGANIZATION, repo=custom_repo)).json()
+    return any(title in list(item.values()) for item in response)
+
+
 def create_update_issue(latest_release: str, current_release: str, custom_repo: str): 
     """Create an issue that describes to update the project"""
 
@@ -53,6 +64,11 @@ def create_update_issue(latest_release: str, current_release: str, custom_repo: 
         "title": f"Update package to {latest_release}!",
         "body": f"The package is currently using {current_release} and we need to update it to {latest_release}"
     }
+
+    if already_exists := check_if_exists(issue["title"], custom_repo):
+        print("Issue already exists...")
+        return
+
     response = session.post(ISSUE_URL.format(owner=ORGANIZATION, repo=custom_repo), data=json.dumps(issue)).json()
     issue_id = response["number"]
 
