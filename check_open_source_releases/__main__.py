@@ -7,7 +7,7 @@ PROJECT_VERSIONS = {
         "owner": "molstar",
         "repo": "molstar",
         "custom_repo": "molstar",
-        "release": "v3.34.0"
+        "release": "v3.35.0"
     },
     "indgio": {
         "owner": "epam",
