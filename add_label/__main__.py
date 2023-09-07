@@ -3,17 +3,12 @@ from github import Github, GithubException
 from github import Auth
 
 # using an access token
-auth = Auth.Token("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")
+auth = Auth.Token("")
 
 # First create a Github instance:
-
-# Public Web Github
 g = Github(auth=auth)
 
-# Github Enterprise with custom hostname
-g = Github(auth=auth)
 
-# Then play with your Github objects:
 for repo in g.get_user().get_repos():
     if "QuanMol" in repo.full_name:
         try:
