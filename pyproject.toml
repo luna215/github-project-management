@@ -14,6 +14,7 @@ pygithub = "^1.59.1"
 [tool.poetry.scripts]
 main = "scripts:main"
 add_label = "scripts:add_label"
+create_issue = "scripts:create_issue"
 
 [build-system]
 requires = ["poetry-core"]
