@@ -13,3 +13,16 @@ After you have it more personalized towards you, then just run the following two
 poetry install
 poetry run main
 ```
+
+## Add Label
+We have predefined labels at my work, so we use this script to create the same issue throughout the organization:
+```zsh
+poetry run add_label
+```
+
+
+## Create Issue
+To create the same issue in multiple or just one repo, then you need to modify `create_issue/__main__.py` with the repos you want to create for and then run:
+```zsh
+poetry run create_issue
+```
